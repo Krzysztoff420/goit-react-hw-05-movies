@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { MoviesTrendingList } from '../components/MoviesTrendingList';
+import { MoviesTrendingList } from '../MoviesTrendingList/MoviesTrendingList';
 import { fetchUrl, apiKey } from '../api/fetchKey';
-import PropTypes from 'prop-types';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -28,7 +27,3 @@ const Home = () => {
 };
 
 export default Home;
-
-MoviesTrendingList.propTypes = {
-  movies: PropTypes.array.isRequired,
-};

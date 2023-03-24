@@ -1,19 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchUrl, apiKey } from 'api/fetchKey';
+import { fetchUrl, apiKey } from 'components/api/fetchKey';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
-    // const fetchUrl = 'https://api.themoviedb.org/3/';
-    // const apiKey = '93dad7f5c3f08e509beef896c33679a7';
-
-    const fetchReviews = async () => {
-      const res = await fetch(
-        `${fetchUrl}/movie/${movieId}/reviews?api_key=${apiKey}`
-      );
+      const fetchReviews = async () => {
+      const res = await fetch(`${fetchUrl}/movie/${movieId}/reviews?api_key=${apiKey}`);
       const resBody = await res.json();
 
       setReviews(resBody.results);

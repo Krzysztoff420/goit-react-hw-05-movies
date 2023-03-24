@@ -1,8 +1,8 @@
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { Suspense } from 'react';
 import { useState, useEffect } from 'react';
-import { MovieCard, MovieInfo, AdditionalInfo} from '../components/MovieDetails.styled';
-import { BackLink } from '../components/BackLink';
+import { MovieCard, MovieInfo, AdditionalInfo } from './MovieDetails.styled';
+import { BackLink } from '../BackLink/BackLink';
 import { fetchUrl, apiKey } from '../api/fetchKey';
 
 const MovieDetails = () => {

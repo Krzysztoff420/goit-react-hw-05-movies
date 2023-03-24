@@ -1,14 +1,12 @@
-import { MoviesList } from 'components/MoviesList';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
+
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-
   const [searchParams, setSearchParams] = useSearchParams();
   const title = searchParams.get('query') ?? '';
-
   const fetchUrl = 'https://api.themoviedb.org/3/search/movie';
   const apiKey = '93dad7f5c3f08e509beef896c33679a7';
 
@@ -34,7 +32,3 @@ const Movies = () => {
 };
 
 export default Movies;
-
-MoviesList.propTypes = {
-  movies: PropTypes.array.isRequired,
-};
